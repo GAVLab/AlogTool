@@ -8,4 +8,4 @@
 
 # Documentation
 
-https://github.com/GAVLab/AlogTool/wiki
+https://github.com/GAVLab/AlogTool/wiki/Documentation
