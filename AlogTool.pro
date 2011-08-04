@@ -10,9 +10,9 @@ TARGET = AlogTool
 TEMPLATE = app
 
 
-SOURCES += src/main.cpp\
-           src/mainwindow.cpp \
-           src/fileutils.cpp
+SOURCES += src/main.cc \
+           src/mainwindow.cc \
+           src/fileutils.cc
 
 HEADERS  += include/mainwindow.h \
             include/fileutils.h
