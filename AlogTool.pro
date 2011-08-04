@@ -10,21 +10,35 @@ TARGET = AlogTool
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
-        mainwindow.cpp \
-    fileutils.cpp
+SOURCES += src/main.cpp\
+           src/mainwindow.cpp \
+           src/fileutils.cpp
 
-HEADERS  += mainwindow.h \
-    fileutils.h
+HEADERS  += include/mainwindow.h \
+            include/fileutils.h
 
-FORMS    += mainwindow.ui
+INCLUDEPATH += include
+
+FORMS    += ui/mainwindow.ui
 
 OTHER_FILES += \
-    alog-tool.rc \
-    alog-tool.ico \
-    alog-tool.icns
+    config/alog-tool.rc \
+    resources/alog-tool.ico \
+    resources/alog-tool.icns
 
-RC_FILE = alog-tool.rc
+RC_FILE = config/alog-tool.rc
 
 
-ICON = alog-tool.icns
+ICON = resources/alog-tool.icns
+
+Release:DESTDIR = release
+Release:OBJECTS_DIR = release/.obj
+Release:MOC_DIR = release/.moc
+Release:RCC_DIR = release/.rcc
+Release:UI_DIR = release/.ui
+
+Debug:DESTDIR = debug
+Debug:OBJECTS_DIR = debug/.obj
+Debug:MOC_DIR = debug/.moc
+Debug:RCC_DIR = debug/.rcc
+Debug:UI_DIR = debug/.ui
