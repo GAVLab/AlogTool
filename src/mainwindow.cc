@@ -120,6 +120,9 @@ void MainWindow::_processFile(QDir dest_dir) {
     }
     mat_file.write("clear; clc;\n\n");
 
+
+    mat_file.write(QString("filename='" +filename.section("", 0, -7) + ".mat';\n\n").toUtf8());
+
     // Parse the file and write the channels
     QHash<QString, QFile *> file_hash;
     qint64 file_count = 0;
@@ -167,6 +170,7 @@ void MainWindow::_processFile(QDir dest_dir) {
             mat_file.write(QString("catch err\n     display('Error loading "+split_line[channel_name_number]+":');\n").toUtf8());
             mat_file.write("     display(err.message);\nend\n\n");
         }
+
         QFile *file_handle;
         file_handle = file_hash.value(split_line[channel_name_number]);
         file_handle->write(split_line[0].toUtf8());
@@ -174,6 +178,8 @@ void MainWindow::_processFile(QDir dest_dir) {
         file_handle->write(split_line[3].toUtf8());
         file_handle->write("\n");
     }
+
+    mat_file.write("save(filename);\n\nclear;\n\n");
 
     QHashIterator<QString, QFile *> i(file_hash);
     while (i.hasNext()) {
