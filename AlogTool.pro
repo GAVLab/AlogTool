@@ -22,11 +22,11 @@ INCLUDEPATH += include
 FORMS    += ui/mainwindow.ui
 
 OTHER_FILES += \
-    config/alog-tool.rc \
+    resources/alog-tool.rc \
     resources/alog-tool.ico \
     resources/alog-tool.icns
 
-RC_FILE = config/alog-tool.rc
+RC_FILE = resources/alog-tool.rc
 
 
 ICON = resources/alog-tool.icns
